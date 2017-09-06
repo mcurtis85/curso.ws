@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlTransient;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @Entity
@@ -16,10 +17,12 @@ public class ItemCompra implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	@Id @GeneratedValue
+	@Id @GeneratedValue 
+	@XmlTransient
 	private Integer id;
 	private Formato formato;
 	private Integer quantidade;
+	@XmlTransient
 	private Integer quantidadeEstoque;
 	
 	@ManyToOne
